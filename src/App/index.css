@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.header {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+}
+
+.sidebar {
+  height: 100%;
+  position: fixed;
+  background: #0e0e0e;
+  top: 53px;
+  padding-left: 0;
+  width: 200px;
+}
+
+.main {
+  width: calc(100% - 200px);
+  height: calc(100% - 50px);
+  position: absolute;
+  right: 0;
+  background: #1f1f1f;
+  top: 50px;
+  overflow-y: scroll;
+}

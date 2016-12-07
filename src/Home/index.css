@@ -1,0 +1,22 @@
+.Home {
+  text-align: left;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.Home .page-heading {
+  position: relative;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  width: calc(100% - 200px);
+}
+
+.buttonHome {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}

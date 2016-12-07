@@ -1,0 +1,29 @@
+.Slidebar {
+}
+
+.title {
+  text-align: left;
+  margin-top: 50px;
+  text-transform: uppercase;
+  text-indent: 20px;
+}
+
+.link {
+  display: block;
+  text-align: left;
+  color: #7d7d7d;
+  text-indent: 20px;
+}
+
+.active {
+  color: #FFF;
+  text-indent: 17px;
+  position: relative;
+  border-left: solid 3px #1ED760;
+  font-weight: bold;
+}
+
+.link:hover, .link:focus {
+  text-decoration: none;
+  color: #FFF;
+}

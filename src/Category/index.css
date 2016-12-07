@@ -1,0 +1,9 @@
+.Category {
+  text-align: left;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.categoryTitle {
+  text-transform: capitalize;
+}
