@@ -8,6 +8,7 @@ coverage
 
 # production
 build
+!build/favicon.ico
 
 # misc
 .DS_Store
