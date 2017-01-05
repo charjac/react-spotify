@@ -1,25 +1,35 @@
-import React, { Component } from 'react';
-import Header from '../Header'
-import Sidebar from '../Sidebar'
-import './index.css';
+import React, {PureComponent} from 'react'
+import styles from './index.css'
 
-class App extends Component {
+class App extends PureComponent {
 
   render() {
     return (
-      <div className="App">
-        <div className="header">
-          <Header />
+      <div className={styles.App}>
+        <header className={styles.header}>
+          <nav className="navbar navbar-default">
+            <div className="container-fluid">
+              <div className="navbar-header">
+                <a className='navbar-brand' href="#">Spotify --</a>
+              </div>
+              <ul className="nav navbar-nav navbar-right">
+                <li>
+                  <input className="form-control" type="search" placeholder="Search"/>
+                </li>
+                <li><a href="#">Signin</a></li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <div className={styles.sidebar}>
+
         </div>
-        <div className="sidebar">
-          <Sidebar />
-        </div>
-        <div className="main">
-            { this.props.children }
+        <div className={styles.main}>
+          Hello world
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

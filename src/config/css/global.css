@@ -1,0 +1,19 @@
+/* COLORS */
+:root {
+    --white: #FFF;
+    --black: #000;
+    --transparent: transparent;
+}
+
+
+/* FONTS */
+:root {
+    --light: 300;
+    --normal: 400;
+    --bold: 600;
+}
+
+/* SIZES */
+:root {
+
+}

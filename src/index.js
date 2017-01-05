@@ -1,17 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import App from './App';
-import Home from './Home'
-import Category from './Category'
+import App from './App'
 
-ReactDOM.render(
-  <Router history={ browserHistory }>
-    <Route component={ App }>
-      <Route path='/' component={ Home } />
-      <Route path={ 'category/:category' } component={ Category }/>
-    </Route>
-  </Router>,
-  document.getElementById('root')
-)
+const rootElem = document.getElementById('root')
+
+ReactDOM.render(<App/>, rootElem)
