@@ -185,8 +185,8 @@ if (TARGET === 'build') {
             }),
             new webpack.optimize.DedupePlugin(),
             new HtmlWebpackPlugin({
-                filename: 'app.html',
-                template: 'app.html',
+                filename: 'index.html',
+                template: 'index.html',
                 inject: true
             }),
             new webpack.optimize.UglifyJsPlugin({
