@@ -5,6 +5,17 @@ class App extends PureComponent {
 
   render() {
     return (
+    <div className="App">
+      <div className="header">
+        <Header />
+      </div>
+      <div className="sidebar">
+        <Sidebar />
+      </div>
+      <div className="main">
+
+      </div>
+    </div>
       <div className={styles.App}>
         <header className={styles.header}>
           <nav className="navbar navbar-default">
