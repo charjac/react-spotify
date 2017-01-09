@@ -47,11 +47,11 @@ const common = {
             {
                 test: /\.css$/,
                 loaders: ['postcss']
-            },
-            {
+            }
+            /*{
                 test: /\.jsx?$/,
                 loaders: ['eslint']
-            }
+            }*/
         ],
         loaders: [
             {

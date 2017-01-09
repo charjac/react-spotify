@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import './index.css';
+import styles from './index.css';
 
 class Control extends Component {
 
@@ -17,7 +17,7 @@ class Control extends Component {
   render() {
 
     return (
-      <div className={'Control'} onClick={ this.props.action }>
+      <div className={styles.Control} onClick={ this.props.action }>
         { this.props.type === 'play' &&
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" style={{marginTop: '7px', marginLeft: '11px'}}>
             <path fill="#FFF" d="M6 4l20 12-20 12z"></path>
