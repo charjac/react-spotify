@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
 
-import Progress from 'components/Progress'
-import Control from 'components/Control'
+import Progress from './Progress'
+import Control from './Control'
 
 import styles from './index.css'
 

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 
-import './index.css'
+import styles from './index.css'
 
 const Progress = ({
   min = 0,
@@ -15,18 +15,18 @@ const Progress = ({
   customClass = null
 }) =>
 
-<div className={ classNames('root', {
+<div className={ classNames(styles.root, {
   [customClass]: customClass
 })}>
     <div
-      className={ 'progress' }
+      className={ styles.progress }
       style={{
         width: `${((value / max) * 100)}%`
       }}>
     </div>
     <input
       type="range"
-      className={ "range" }
+      className={ styles.range }
       min={ min }
       max={ max }
       value={ value }
