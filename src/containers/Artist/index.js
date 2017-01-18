@@ -11,26 +11,36 @@ import { addAlbumToPlaylist } from 'actions/player'
 
 import { ajax } from 'helpers/ajax'
 
+const selectAlbums = (albums, ownProps) => {
+  return Object.keys(albums)
+    .map((albumId) => albums[albumId])
+    .filter((album) => album.artistId === ownProps.params.id)
+}
+
+const selectImages = (albums, ownProps) => {
+  return selectAlbums(albums, ownProps)
+    .map((album) => album.images[0])
+    .slice(0, 4)
+}
+
 @connect(
-  (state, ownProps) => ({
-    artist: state.artist.data[ownProps.params.id],
-    albums: Object.keys(state.album.data)
-      .map((albumId) => state.album.data[albumId])
-      .filter((album) => album.artistId !== ownProps.params.id),
-    pending: state.artist.pending || state.album.pending,
-    images: Object.keys(state.album.data)
-      .map((albumId) => state.album.data[albumId])
-      .filter((album) => album.artistId !== ownProps.params.id)
-      .map((album) => album.images[0])
-      .slice(0, 4)
-  }),
-  (dispatch) => bindActionCreators({
-    fetchArtistPending,
-    fetchArtistSuccess,
-    fetchAlbumsPending,
-    fetchAlbumsSuccess,
-    addAlbumToPlaylist
-  }, dispatch)
+  (state, ownProps) => {
+    return {
+      artist: state.artist.data[ownProps.params.id],
+      albums: selectAlbums(state.album.data, ownProps),
+      pending: state.artist.pending || state.album.pending,
+      images: selectImages(state.album.data, ownProps)
+    }
+  },
+  (dispatch) => {
+    return bindActionCreators({
+      fetchArtistPending,
+      fetchArtistSuccess,
+      fetchAlbumsPending,
+      fetchAlbumsSuccess,
+      addAlbumToPlaylist
+    }, dispatch)
+  }
 )
 class Artist extends PureComponent {
   static propTypes = {
@@ -54,7 +64,6 @@ class Artist extends PureComponent {
       url: `/albums/${album.id}`
     })
       .then((data) => {
-        console.log(data)
         this.props.addAlbumToPlaylist(data.tracks.items)
       })
   }
@@ -70,11 +79,17 @@ class Artist extends PureComponent {
     this.props.fetchAlbumsPending()
 
     ajax({
+      url: `/artists/${this.props.params.id}`
+    })
+      .then((payload) => {
+        this.props.fetchArtistSuccess(payload)
+      })
+
+    ajax({
       url: `/artists/${this.props.params.id}/albums`
     })
       .then((payload) => {
         this.props.fetchAlbumsSuccess(payload.items)
-        this.props.fetchArtistSuccess(!!payload.items[0] ? payload.items[0].artists[0] : {})
       })
   }
 
