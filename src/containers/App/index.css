@@ -34,10 +34,3 @@
   text-transform: uppercase;
   text-indent: 20px;
 }
-
-.footer {
-  position: fixed;
-  height: 75px;
-  width: 100%;
-  bottom: 0;
-}
